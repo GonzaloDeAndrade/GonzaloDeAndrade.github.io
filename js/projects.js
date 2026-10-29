@@ -71,6 +71,61 @@ window.PROJECTS = [
     },
   },
   {
+    id: 'vbagente',
+    name: 'VB Agente',
+    tagline: 'Marketing automation for Meta Ads — built at Vamos Bien',
+    summary:
+      'An internal tool for a digital marketing agency: it reads campaign metrics from the Meta Marketing API, flags performance problems with clear rules, and creates complete test campaigns (campaign, ad set, creative and ad) from a simple web form.',
+    status: 'active',
+    statusLabel: 'Internal tool · prototype',
+    area: 'Backend · API Integrations · Automation',
+    tags: ['Node.js', 'TypeScript', 'Express 5', 'Meta Marketing API', 'Multer'],
+    cover: 'assets/projects/vbagente/cover.webp',
+    coverAlt: 'VB Agente web form after creating a campaign: success message with the new campaign, ad set and ad IDs',
+    repo: 'https://github.com/GonzaloDeAndrade/VBAgente',
+    caseStudy: {
+      overview:
+        'VB Agente is a Node.js + TypeScript tool I developed at Vamos Bien, a digital marketing agency. It connects to the Meta Marketing API to do two things: review the performance of existing ad campaigns and suggest what to fix, and create new test campaigns end to end without going through Ads Manager.',
+      problem:
+        'Reviewing many campaigns by hand in Meta Ads Manager is slow, and the warning signs (low CTR, ad fatigue, money spent without conversions) are easy to miss. Creating a campaign also means repeating the same multi-step setup every time.',
+      solution: [
+        'Optimization agent (CLI): lists every ad account the token can access, fetches campaigns and last-30-day insights in parallel, and prints each campaign with spend, impressions, clicks, CTR, CPC, frequency and conversions.',
+        'Rule-based suggestions (no AI): low CTR (under 1%), high frequency (over 3.5, risk of ad fatigue), spend with zero conversions, CPC more than 1.5× the average of the account’s own campaigns, and active campaigns with no spend or no impressions.',
+        'Web interface (Express 5 + server-rendered HTML): a form to choose objective, daily budget, headline, copy and image, which then chains the API calls — campaign → ad set → image upload → ad creative → ad.',
+        'Image upload handled in memory with Multer (PNG/JPG up to 8 MB), with drag-and-drop and preview.',
+        'Table with the campaigns that already exist in the account and their status.',
+      ],
+      features: [
+        'Five campaign objectives: traffic, engagement, leads, sales and awareness',
+        'Optional ad: without an image it creates only the campaign and the ad set',
+        'Clear success and error messages, keeping the form values after an error',
+        'Interface styled with the agency’s brand colors',
+      ],
+      challenges: [
+        {
+          title: 'Working safely against a real advertising API',
+          text: 'Mistakes here cost real money. The interface is locked to a single test ad account, everything it creates starts PAUSED, and a separate test script creates, activates and pauses a campaign that has no ad sets, so it can never deliver or spend.',
+        },
+        {
+          title: 'Benchmarks that make sense for each account',
+          text: 'A “high” CPC depends on the account and the market. Instead of a fixed number, each campaign’s CPC is compared with the average CPC of the other campaigns in the same account.',
+        },
+        {
+          title: 'A chain of dependent API calls',
+          text: 'Each step needs the ID returned by the previous one (campaign → ad set → image hash → creative → ad). Budgets are sent in minor currency units (ARS × 100), as the API expects.',
+        },
+      ],
+      contribution:
+        'Developed at Vamos Bien (digital marketing agency): API integration, the suggestion rules, the web interface and the safety measures for testing.',
+      gallery: [
+        { src: 'assets/projects/vbagente/cli.webp', alt: 'Terminal output of the optimization agent with metrics and suggestions per campaign', caption: 'Optimization agent: metrics per campaign and rule-based suggestions — low CTR, spend without conversions, CPC above the account average, ad fatigue.' },
+        { src: 'assets/projects/vbagente/form.webp', alt: 'Campaign creation form with objective, budget, headline, copy and image preview', caption: 'Creating a campaign: objective, daily budget, ad headline, copy and image with preview.' },
+        { src: 'assets/projects/vbagente/created.webp', alt: 'Success message listing the created campaign, ad set and ad', caption: 'After submitting: campaign, ad set and ad created, all PAUSED, and the new campaign listed in the account table.' },
+      ],
+      note: 'Screenshots are from the real interface and CLI running locally, with the Meta API replaced by sample data so no real account is shown. Campaign names, metrics and IDs are fictional.',
+    },
+  },
+  {
     id: 'magicweb',
     name: 'MagicWeb',
     tagline: 'E-commerce for Magic: The Gathering cards',
