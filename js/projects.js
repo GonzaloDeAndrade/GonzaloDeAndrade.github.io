@@ -126,6 +126,69 @@ window.PROJECTS = [
     },
   },
   {
+    id: 'zoho-job-hunter',
+    name: 'Zoho Job Hunter',
+    tagline: 'A job search engine built around my own CV',
+    summary:
+      'A local tool that pulls Zoho-related job postings from 20+ job boards and company career pages, scores each one against my CV, groups duplicates and shows everything in a dashboard with filters, statuses, notes and Excel export.',
+    status: 'active',
+    statusLabel: 'In use · runs locally',
+    area: 'Full-Stack · Automation · Data',
+    tags: ['Node.js', 'TypeScript', 'SQLite (sql.js)', 'Playwright', 'ExcelJS', 'REST APIs', 'RSS', 'JavaScript'],
+    cover: 'assets/projects/zoho-job-hunter/cover.webp',
+    coverAlt: 'Zoho Job Hunter dashboard: job list with CV match scores, Zoho tools detected in each posting, filters and status buckets',
+    caseStudy: {
+      overview:
+        'I built this to look for Zoho Developer jobs. Each run queries job board APIs, RSS feeds and the public career pages of Zoho partners, normalizes every posting into one format, stores it in SQLite and scores it against a structured profile taken from my CV. The dashboard shows Zoho roles first and lets me filter, track and export them.',
+      problem:
+        'Zoho jobs are spread across dozens of places: general boards, remote boards, and the career pages of small Zoho partners that never show up in the obvious searches. Searching "Zoho Developer" by hand gives a few results, many of them duplicated, closed, restricted to one country, or sales roles that only use Zoho CRM as a tool.',
+      solution: [
+        'One connector per source with a common output, split in two phases: job boards first, then company career pages (ATS) discovered along the way.',
+        'Automatic discovery: any posting that links to a Greenhouse, Lever, Ashby, Workable, Recruitee, Workday or Zoho Recruit page adds that company to a registry, so the next runs read its career page directly.',
+        'A CV-based score (0–100) that separates what the CV proves, what is related but not proven, and the gaps (other stacks, languages, years asked, location limits).',
+        'Duplicate grouping by company + normalized title or URL, keeping the version from the company’s own career page.',
+        'Lifecycle tracking: postings that disappear from a source or pass their closing date are marked as possibly closed, and content changes are recorded.',
+      ],
+      features: [
+        'Sources with official APIs or public feeds: Himalayas, Workable, Remotive, Remote OK, We Work Remotely, Jobicy, Arbeitnow, Get on Board, The Muse, Hacker News “Who is hiring”, Freelancer.com and Jooble',
+        'Company career pages: Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Workday and Zoho Recruit (Zoho Corp and Zoho partners), plus the official Zoho Creator partner job board',
+        'Free-text search from the dashboard that runs that query across the sources and shows results as they arrive',
+        'Extraction of Zoho apps mentioned, salary, remote/hybrid/on-site, required languages, years of experience, and required vs. nice-to-have requirements',
+        'A shortlist with my own rules: minimum salary, remote or open to Argentina/LATAM, recent postings, and roles that ask for hiring “immediately”',
+        'Per-posting statuses (pending, reviewed, applied, discarded) and personal notes, stored apart from the job data so a new run never overwrites them',
+        'CSV and Excel export, and a report for every run (sources queried, new postings, duplicates, errors)',
+        'A cover letter generated only from facts in my CV, and a Playwright form filler that completes application forms in a dry-run mode',
+      ],
+      challenges: [
+        {
+          title: 'Zoho Recruit career pages without an API',
+          text: 'Many Zoho partners publish jobs on Zoho Recruit, but the RSS feed is disabled on their sites. The listings turned out to be embedded in the page as HTML-escaped JSON, and each job page holds its description inside a JavaScript string. I wrote a parser for both formats, which unlocked dozens of partner career pages.',
+        },
+        {
+          title: 'A rate-limited source that froze the whole run',
+          text: 'After a long first run, one board started answering 429 with a long Retry-After, and the HTTP client honored it, so the run never finished and nothing was saved. I capped retries at 30 seconds, made the source fail fast, and added progressive saves every 20 seconds so the dashboard fills while the search is still running.',
+        },
+        {
+          title: 'Text rules that matched the wrong things',
+          text: 'Real data broke several first versions: “la plataforma” matched the city “La Plata”, generic uses of “immediately” were read as urgent hiring, French postings were taken as Spanish, and a “$150” figure was read as an hourly rate. Each one got a stricter rule, and the matching ones got a unit test built from the real case.',
+        },
+        {
+          title: 'A form filler that never makes up answers',
+          text: 'The form filler reads each field by its label (including Zoho Recruit’s custom components) and fills it from a candidate file. Anything not in that file, like salary expectations or work authorization, is left for me, and it stops on any CAPTCHA. Dry runs on real forms also caught smaller bugs, like pasting the full phone number next to a country-code selector or uploading the CV into a photo field.',
+        },
+      ],
+      contribution:
+        'Personal project. I defined what to search, the matching rules against my CV, the shortlist criteria and the limits for the form filler, and checked the results against real postings. Development was AI-assisted (see the note in the About section).',
+      gallery: [
+        { src: 'assets/projects/zoho-job-hunter/shortlist.webp', alt: 'Shortlist view grouped by how likely each posting is to accept candidates from Argentina', caption: 'Shortlist: Zoho postings grouped by how likely they are to accept someone in Argentina (mentions Argentina, open to LATAM, in Spanish, remote worldwide), with salary when the posting publishes it.' },
+        { src: 'assets/projects/zoho-job-hunter/detail.webp', alt: 'Job detail panel with fields, match reasons, proven skills, gaps and requirements', caption: 'Job detail: extracted fields, why it matches, what the CV proves, the gaps, and required vs. nice-to-have requirements.' },
+        { src: 'assets/projects/zoho-job-hunter/sources.webp', alt: 'Integrated sources table with access method, last run, status and counts', caption: 'Coverage: integrated sources with their access method, last run, status and how many postings each one contributed.' },
+        { src: 'assets/projects/zoho-job-hunter/autofill.webp', alt: 'Form filler history: dry runs with the fields filled and what was missing', caption: 'Form filler in dry-run mode: what it completed on each real form, what it left for me, and the most common missing answers.' },
+      ],
+      note: 'Screenshots are from the real app running locally (the interface is in Spanish). Job postings shown are public listings from third-party sites.',
+    },
+  },
+  {
     id: 'magicweb',
     name: 'MagicWeb',
     tagline: 'E-commerce for Magic: The Gathering cards',
