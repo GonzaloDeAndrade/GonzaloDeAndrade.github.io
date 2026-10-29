@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gonzalo de Andrade · Software Developer</title>
+  <meta name="description" content="Software developer from Argentina. Full-stack web development, Zoho solutions and system integrations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23131311'/><text x='16' y='22' font-family='monospace' font-size='15' fill='%23d4ff3a' text-anchor='middle'>gd</text></svg>">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top" aria-label="Home">gonzalo<span>.dev</span></a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#zoho">Zoho</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero wrap" id="top">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Argentina · Open to Remote Opportunities</p>
+        <h1>Gonzalo de Andrade</h1>
+        <p class="headline">Software developer building <em>full-stack apps</em>, <em>Zoho solutions</em> and the <em>integrations</em> that connect them.</p>
+        <p class="intro">I work across frontend, backend and databases, and I automate business processes inside the Zoho ecosystem. Most of my work is about making systems talk to each other and solving real business problems with software.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#projects">See my projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+
+      <figure class="flow" aria-label="Diagram: frontend, backend and business systems connected through APIs">
+        <div class="flow-head"><span></span><span></span><span></span><code>how I think about a project</code></div>
+        <ol class="flow-body">
+          <li class="node">
+            <span class="node-k">01 / interface</span>
+            <strong>Angular · TypeScript</strong>
+            <small>what the user sees and does</small>
+          </li>
+          <li class="wire" aria-hidden="true"><span>REST · JWT</span></li>
+          <li class="node">
+            <span class="node-k">02 / logic</span>
+            <strong>Node.js · Express</strong>
+            <small>endpoints, rules, auth</small>
+          </li>
+          <li class="wire" aria-hidden="true"><span>webhooks · APIs</span></li>
+          <li class="node node-split">
+            <div>
+              <span class="node-k">03 / data</span>
+              <strong>MongoDB · MySQL</strong>
+            </div>
+            <div>
+              <span class="node-k">04 / business</span>
+              <strong>Zoho · Stripe</strong>
+            </div>
+          </li>
+        </ol>
+      </figure>
+    </section>
+
+    <!-- STRENGTHS -->
+    <section class="strengths wrap" aria-label="Core strengths">
+      <article>
+        <span class="num">01</span>
+        <h2>Full-Stack Development</h2>
+        <p>Web apps with Angular, TypeScript, Node.js, Express and MongoDB — interfaces, backend logic, APIs, data models and authentication.</p>
+      </article>
+      <article>
+        <span class="num">02</span>
+        <h2>Zoho &amp; Business Automation</h2>
+        <p>Custom functions in Deluge, workflows, CRM customization and Creator apps. Both platform configuration and real programming.</p>
+      </article>
+      <article>
+        <span class="num">03</span>
+        <h2>API Integrations</h2>
+        <p>Connecting apps and external services with REST APIs and webhooks — for example, Stripe payments flowing into Zoho CRM.</p>
+      </article>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section wrap" id="about">
+      <div class="section-head">
+        <p class="kicker">About</p>
+        <h2>Practical software for real problems</h2>
+      </div>
+      <div class="about-grid">
+        <div class="prose">
+          <p>I’m a software developer from Argentina. My experience mixes two worlds: traditional web development (frontend, backend, databases and integrations) and business software, especially customization and automation inside the Zoho ecosystem.</p>
+          <p>I like understanding how a business actually works and then building the piece that is missing — a web app, an automation, or the integration that moves data between two systems that didn’t talk before. I adapt to the stack the project needs, and I care about things working end to end, not just in a demo.</p>
+          <p>Spanish is my native language and I work comfortably in English in professional and technical contexts.</p>
+        </div>
+        <aside class="note-card">
+          <h3>On AI-assisted development</h3>
+          <p>I use AI tools in my daily workflow: researching documentation, exploring implementation options, reviewing code, debugging and learning new technologies faster. They speed up my work; they don’t replace understanding it. In each project I focus on the decisions and code I can explain and defend.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section wrap" id="skills">
+      <div class="section-head">
+        <p class="kicker">Skills</p>
+        <h2>What I work with</h2>
+      </div>
+      <div class="skills">
+        <article class="skill skill-main">
+          <h3>Full-Stack Development</h3>
+          <dl>
+            <dt>Frontend</dt><dd>Angular (incl. Angular 19, standalone components), TypeScript, RxJS, HTML, CSS, SCSS</dd>
+            <dt>Backend</dt><dd>Node.js, Express.js, REST API development, business logic and endpoints, JWT authentication and authorization, password hashing with bcryptjs</dd>
+            <dt>Languages</dt><dd>JavaScript, TypeScript, SQL, Java, C</dd>
+          </dl>
+        </article>
+        <article class="skill skill-main">
+          <h3>Zoho Development</h3>
+          <dl>
+            <dt>Code</dt><dd>Deluge custom functions, Client Scripts (JavaScript + ZDK), CRM widgets</dd>
+            <dt>Platform</dt><dd>CRM modules and fields, workflows, Creator applications, Zoho Flow</dd>
+            <dt>Apps</dt><dd>CRM, Creator, Books, Desk, Recruit, SalesIQ, Analytics, Sheet, Flow</dd>
+          </dl>
+        </article>
+        <article class="skill">
+          <h3>API Integrations &amp; Automation</h3>
+          <ul>
+            <li>REST API and third-party integrations</li>
+            <li>Webhooks</li>
+            <li>Online payment integrations</li>
+            <li>Data exchange between business apps</li>
+            <li>Business process automation</li>
+          </ul>
+        </article>
+        <article class="skill">
+          <h3>Databases &amp; Data Analysis</h3>
+          <ul>
+            <li>MongoDB, MongoDB Atlas, Mongoose</li>
+            <li>MySQL</li>
+            <li>Data modeling</li>
+            <li>SQL queries and data processing</li>
+            <li>Reports and charts in Zoho Analytics</li>
+          </ul>
+        </article>
+        <article class="skill">
+          <h3>Tools &amp; Workflow</h3>
+          <ul>
+            <li>Git, Bitbucket</li>
+            <li>Jenkins, SonarQube</li>
+            <li>Docker <span class="muted">(basic)</span></li>
+            <li>AI-assisted development</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section wrap" id="projects">
+      <div class="section-head">
+        <p class="kicker">Projects</p>
+        <h2>Selected work</h2>
+        <p class="section-sub">Each project shows its real status. Case studies marked “coming soon” are being documented.</p>
+      </div>
+      <div class="project-feature" id="featured"></div>
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <!-- ZOHO -->
+    <section class="section wrap" id="zoho">
+      <div class="zoho">
+        <div class="section-head">
+          <p class="kicker">Zoho Development</p>
+          <h2>Business software, not just CRM settings</h2>
+          <p class="section-sub">I build on the Zoho One ecosystem as a development platform: code, automation and integrations with outside services.</p>
+        </div>
+        <div class="zoho-grid">
+          <article>
+            <h3>Deluge functions</h3>
+            <p>Custom functions for business logic, data processing and automation — including functions exposed as webhook endpoints.</p>
+          </article>
+          <article>
+            <h3>CRM customization</h3>
+            <p>Modules, fields and workflows adapted to how each business works, plus Client Scripts with JavaScript and ZDK, and CRM widgets.</p>
+          </article>
+          <article>
+            <h3>Creator applications</h3>
+            <p>Business applications built with Zoho Creator, like the rental management demo in the projects section.</p>
+          </article>
+          <article>
+            <h3>Integrations &amp; analytics</h3>
+            <p>Connecting Zoho apps with each other and with external services (e.g. Stripe), then querying the data in Zoho Analytics with SQL, reports and charts.</p>
+          </article>
+        </div>
+        <p class="zoho-apps" aria-label="Zoho apps I have worked with">
+          <span>CRM</span><span>Creator</span><span>Books</span><span>Desk</span><span>Recruit</span><span>SalesIQ</span><span>Analytics</span><span>Sheet</span><span>Flow</span><span>Deluge</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section wrap" id="contact">
+      <div class="contact">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Let’s work together</h2>
+          <p>Open to remote positions and freelance projects. The fastest way to reach me is by email.</p>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="c-label">Email</span>
+            <span class="c-value placeholder" title="Placeholder — to be added">[your email — pending]</span>
+          </li>
+          <li>
+            <span class="c-label">LinkedIn</span>
+            <span class="c-value placeholder" title="Placeholder — to be added">[LinkedIn URL — pending]</span>
+          </li>
+          <li>
+            <span class="c-label">GitHub</span>
+            <a class="c-value" href="https://github.com/GonzaloDeAndrade" target="_blank" rel="noopener">github.com/GonzaloDeAndrade ↗</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span>© <span id="year"></span> Gonzalo de Andrade</span>
+    <span>Argentina · Remote</span>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
