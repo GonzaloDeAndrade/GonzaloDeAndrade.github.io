@@ -80,6 +80,7 @@ window.PROJECTS = [
     statusLabel: 'Case study coming soon',
     area: 'Full-Stack · E-commerce',
     tags: ['Angular 19', 'TypeScript', 'Node.js', 'Express 5', 'MongoDB Atlas', 'Scryfall API'],
+    repo: 'https://github.com/GonzaloDeAndrade/magicWebV2',
   },
   {
     id: 'zoho-rental',
@@ -92,27 +93,5 @@ window.PROJECTS = [
     area: 'Zoho · Business apps',
     tags: ['Zoho Creator', 'Deluge'],
     demo: 'https://gonzalodeandrade.github.io/zoho-rental-management/',
-  },
-  {
-    id: 'stripe-zoho',
-    name: 'Stripe → Zoho CRM',
-    tagline: 'Payment data integration and analytics',
-    summary:
-      'Stripe integrated with Zoho CRM through a Deluge function exposed as a webhook endpoint. The data was then analyzed in Zoho Analytics with SQL queries, reports and charts.',
-    status: 'pending',
-    statusLabel: 'Case study coming soon',
-    area: 'Integrations · Analytics',
-    tags: ['Stripe', 'Zoho CRM', 'Deluge', 'Webhooks', 'Zoho Analytics', 'SQL'],
-  },
-  {
-    id: 'sin-collar',
-    name: 'Sin Collar',
-    tagline: 'Pet adoption website',
-    summary: 'A pet adoption website developed with Angular.',
-    status: 'pending',
-    statusLabel: 'Case study coming soon',
-    area: 'Frontend',
-    tags: ['Angular'],
-    repo: 'https://github.com/GonzaloDeAndrade/Proyecto-sin-collar',
   },
 ];
