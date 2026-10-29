@@ -20,7 +20,7 @@
   function projectCard(p, featured) {
     const media = p.cover
       ? `<a class="card-media" href="${p.caseStudy ? `project.html?id=${encodeURIComponent(p.id)}` : '#'}" tabindex="-1" aria-hidden="true">
-           <img src="${esc(p.cover)}" alt="${esc(p.coverAlt || p.name)}" loading="lazy" decoding="async">
+           <img src="${esc(p.cover)}" alt="${esc(p.coverAlt || p.name)}" loading="${featured ? 'eager' : 'lazy'}" decoding="async">
          </a>`
       : `<div class="card-media card-media-empty" aria-hidden="true"><span>${esc(p.name.slice(0, 2))}</span><small>screenshots coming</small></div>`;
     return `

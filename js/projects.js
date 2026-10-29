@@ -14,7 +14,7 @@ window.PROJECTS = [
     statusLabel: 'In active development · runs locally',
     area: 'Full-Stack · AI · Media processing',
     tags: ['Python', 'Flask', 'OpenAI API', 'faster-whisper', 'FFmpeg', 'yt-dlp', 'SQLite', 'JavaScript'],
-    cover: 'assets/projects/prende/grid.webp',
+    cover: 'assets/projects/prende/cover.webp',
     coverAlt: 'Prende review screen: clip cards with AI score, hook type, duration and the reason each clip was selected',
     repo: 'https://github.com/GonzaloDeAndrade/prende',
     caseStudy: {
@@ -62,10 +62,10 @@ window.PROJECTS = [
       contribution:
         'Personal project. I defined the product, the selection approach and the evaluation method, and tested every change against real videos — tracing each missed moment back to the exact step where the pipeline failed. Development was AI-assisted (see the note in the About section).',
       gallery: [
-        { src: 'assets/projects/prende/grid.webp', alt: 'Grid review mode with clip cards', caption: 'Grid mode: each candidate shows its hook type, duration and the AI’s reason for keeping or rejecting it.' },
-        { src: 'assets/projects/prende/grid2.webp', alt: 'Clip editing controls: edit rhythm, subtitle color, filmstrip trim and detected pauses', caption: 'Per-clip editing: rhythm, subtitle color, filmstrip trim and a list of detected pauses you can restore.' },
-        { src: 'assets/projects/prende/card.webp', alt: 'Single clip card close-up', caption: 'A single clip card, flagged as one of the most replayed parts of the source video.' },
-        { src: 'assets/projects/prende/empty.webp', alt: 'Prende main toolbar', caption: 'Main toolbar: video source, content category, number of clips, analysis speed and an optional request to the AI.' },
+        { src: 'assets/projects/prende/grid.webp', alt: 'Grid review mode: vertical clip previews with AI title, hook type, duration and reasoning', caption: 'Grid mode: every candidate clip rendered in 9:16, with its hook type, duration and the AI’s reason for keeping or rejecting it. Fire badges mark the recommended ones.' },
+        { src: 'assets/projects/prende/deck.webp', alt: 'One-by-one review mode with a single recommended clip and keep/discard buttons', caption: 'One-by-one mode: review each clip and keep or discard it. This one is flagged as one of the most replayed parts of the source video (YouTube heatmap, 72%).' },
+        { src: 'assets/projects/prende/editing.webp', alt: 'Clip editing controls: edit rhythm, subtitle color, filmstrip trim and detected pauses', caption: 'Per-clip editing: rhythm, subtitle color, filmstrip trim and the list of auto-removed pauses — uncheck one to bring it back.' },
+        { src: 'assets/projects/prende/toolbar.webp', alt: 'Prende main toolbar', caption: 'Toolbar: video source, content category, number of clips, analysis speed and an optional request to the AI.' },
       ],
       note: 'Screenshots are from the real app running locally. The source videos in them are third-party test content and are not part of the project.',
     },
